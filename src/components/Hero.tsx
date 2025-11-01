@@ -14,71 +14,66 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{
-        background: `linear-gradient(135deg, hsl(188, 95%, 36%) 0%, hsl(263, 70%, 65%) 100%)`,
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background"
     >
-      {/* Background Image Overlay */}
-      <div
-        className="absolute inset-0 opacity-20 mix-blend-overlay"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-20 h-20 bg-secondary/30 rounded-full animate-float" />
-      <div className="absolute bottom-32 left-10 w-32 h-32 bg-accent/20 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/3 left-1/4 w-16 h-16 border-4 border-secondary/40 rotate-45 animate-pulse-slow" />
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--muted-foreground)) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="text-white space-y-6">
-            <div className="space-y-2">
-              <p className="text-lg md:text-xl font-medium opacity-90">Hello, I'm</p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <div className="space-y-6">
+            <div className="inline-block px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
+              <p className="text-sm md:text-base font-medium text-secondary">Welcome to my portfolio</p>
+            </div>
+            
+            <div className="space-y-3">
+              <p className="text-2xl md:text-3xl font-medium text-foreground">Hello, I'm</p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight gradient-text">
                 Bonoshree Talukder Tondra
               </h1>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-secondary">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground">
                 ETE Student | Circuit Designer | Web Developer
               </h2>
             </div>
 
-            <p className="text-lg md:text-xl opacity-90 max-w-xl">
+            <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
               Bridging circuits and code to create intelligent and connected solutions. Passionate about Machine Learning and Embedded Systems.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                <a href="#projects">View Projects</a>
+              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg">
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20"
+                className="bg-card border-2 hover:bg-muted"
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <a href="#contact">Let's Talk</a>
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-3 pt-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all hover:scale-110"
+                  className="px-4 py-2 rounded-lg bg-card border hover:bg-muted transition-all flex items-center gap-2 text-sm font-medium"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-4 w-4 text-secondary" />
+                  <span className="text-foreground">{social.label}</span>
                 </a>
               ))}
             </div>
@@ -88,20 +83,22 @@ export function Hero() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
               {/* Decorative Ring */}
-              <div className="absolute -inset-4 bg-secondary/30 rounded-full blur-2xl animate-pulse-slow" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse-slow" />
               
-              {/* Image Container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-white/20 shadow-2xl">
-                <img
-                  src={profileImg}
-                  alt="Bonoshree Talukder Tondra"
-                  className="w-full h-full object-cover"
-                />
+              {/* Image Container with gradient border */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full p-1 bg-gradient-to-br from-primary via-accent to-secondary">
+                <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                  <img
+                    src={profileImg}
+                    alt="Bonoshree Talukder Tondra"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-card text-card-foreground px-6 py-3 rounded-full shadow-xl border-4 border-primary animate-float">
-                <p className="font-bold text-lg">CUET Student</p>
+              <div className="absolute -bottom-4 -right-4 bg-card text-foreground px-6 py-3 rounded-full shadow-xl border-2 border-primary animate-float">
+                <p className="font-bold text-base">CUET Student</p>
               </div>
             </div>
           </div>
@@ -110,8 +107,8 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-white/50 flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-white/70 rounded-full" />
+        <div className="w-6 h-10 rounded-full border-2 border-secondary flex items-start justify-center p-2">
+          <div className="w-1 h-3 bg-secondary rounded-full" />
         </div>
       </div>
     </section>
