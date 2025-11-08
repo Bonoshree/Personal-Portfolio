@@ -199,11 +199,16 @@ export function Contact() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
                 </div>
+<Button
+  type="submit"
+  size="lg"
+  className={`w-full bg-pink-400 hover:bg-pink-500 text-white shadow-lg transition-colors ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+  disabled={isSubmitting}
+>
+  <Send className="mr-2 h-5 w-5" />
+  {isSubmitting ? "Sending..." : "Send Message"}
+</Button>
 
-                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                  <Send className="mr-2 h-5 w-5" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
               </form>
 
               {/* Direct Email Line Below Form */}
