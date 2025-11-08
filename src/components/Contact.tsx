@@ -26,7 +26,6 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form data
     try {
       contactSchema.parse(formData);
     } catch (error) {
@@ -43,17 +42,16 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
       await emailjs.send(
-        "service_zbqz77b", // Service ID
-        "template_a453u0j", // Template ID
+        "service_zbqz77b",
+        "template_a453u0j",
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_name: "Bonoshree",
         },
-        "nyrlx0R791I3_d-_9" // Public Key
+        "nyrlx0R791I3_d-_9"
       );
 
       toast({
@@ -61,7 +59,6 @@ export function Contact() {
         description: "Thank you for reaching out. I'll get back to you soon!",
       });
 
-      // Reset form
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       toast({
@@ -162,7 +159,7 @@ export function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <Card className="p-8">
+            <Card className="p-8 space-y-6">
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
@@ -208,6 +205,17 @@ export function Contact() {
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
+
+              {/* Direct Email Line Below Form */}
+              <div className="mt-4 text-center bg-blue-50 p-4 rounded-lg">
+                <p className="text-sm text-muted-foreground mb-1">Prefer email? Reach me directly at</p>
+                <a
+                  href="mailto:bonoshreetondra@gmail.com"
+                  className="text-blue-600 font-medium hover:underline"
+                >
+                  bonoshreetondra@gmail.com
+                </a>
+              </div>
             </Card>
           </div>
         </div>
