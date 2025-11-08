@@ -20,8 +20,9 @@ export function Navigation() {
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Services", href: "#services" },
+    // { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
+    {name: "Caertifications", href: "#certifications"},
     { name: "Contact", href: "#contact" },
   ];
 
