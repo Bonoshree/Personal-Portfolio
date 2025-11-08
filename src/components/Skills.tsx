@@ -6,7 +6,7 @@ export function Skills() {
     {
       title: "Programming Languages",
       icon: Code2,
-      skills: ["C/C++", "Python", "MATLAB", "Machine Learning"],
+      skills: ["C/C++", "Python", "MATLAB", "Deep Learning"],
     },
     {
       title: "Web Development",
