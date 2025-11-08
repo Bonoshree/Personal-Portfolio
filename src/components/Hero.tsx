@@ -38,7 +38,7 @@ export function Hero() {
                 Bonoshree Talukder Tondra
               </h1>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground">
-                ETE Student | Circuit Designer | Web Developer
+                BSc. in ETE || CUET || ML & AI Enthusiast
               </h2>
             </div>
 
@@ -97,9 +97,9 @@ export function Hero() {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-card text-foreground px-6 py-3 rounded-full shadow-xl border-2 border-primary animate-float">
+              {/* <div className="absolute -bottom-4 -right-4 bg-card text-foreground px-6 py-3 rounded-full shadow-xl border-2 border-primary animate-float">
                 <p className="font-bold text-base">CUET Student</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
