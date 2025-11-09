@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Facebook, Mail, Download } from "lucide-react";
 import profileImg from "@/assets/bonoshree.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
+import cv from "@/assets/bonoshree-cv.pdf";
 
 export function Hero() {
   const socialLinks = [
@@ -18,10 +19,13 @@ export function Hero() {
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--muted-foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--muted-foreground)) 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-20">
@@ -29,11 +33,15 @@ export function Hero() {
           {/* Text Content */}
           <div className="space-y-6">
             <div className="inline-block px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
-              <p className="text-sm md:text-base font-medium text-secondary">Welcome to my portfolio</p>
+              <p className="text-sm md:text-base font-medium text-secondary">
+                Welcome to my portfolio
+              </p>
             </div>
-            
+
             <div className="space-y-3">
-              <p className="text-2xl md:text-3xl font-medium text-foreground">Hello, I'm</p>
+              <p className="text-2xl md:text-3xl font-medium text-foreground">
+                Hello, I'm
+              </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight gradient-text">
                 Bonoshree Talukder Tondra
               </h1>
@@ -43,15 +51,24 @@ export function Hero() {
             </div>
 
             <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Bridging circuits and code to create intelligent and connected solutions. Passionate about Machine Learning and Embedded Systems.
+              Bridging circuits and code to create intelligent and connected
+              solutions. Passionate about Machine Learning and Embedded Systems.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg">
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
-              </Button>
+              {/* View CV Button */}
+              <a href="/bonoshree-cv.pdf" target="_blank" rel="noopener noreferrer">
+  <Button
+    size="lg"
+    className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg"
+  >
+    <Download className="mr-2 h-5 w-5" />
+    View CV
+  </Button>
+</a>
+
+
               <Button
                 size="lg"
                 variant="outline"
@@ -84,7 +101,7 @@ export function Hero() {
             <div className="relative">
               {/* Decorative Ring */}
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse-slow" />
-              
+
               {/* Image Container with gradient border */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full p-1 bg-gradient-to-br from-primary via-accent to-secondary">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
@@ -95,11 +112,6 @@ export function Hero() {
                   />
                 </div>
               </div>
-
-              {/* Floating Badge */}
-              {/* <div className="absolute -bottom-4 -right-4 bg-card text-foreground px-6 py-3 rounded-full shadow-xl border-2 border-primary animate-float">
-                <p className="font-bold text-base">CUET Student</p>
-              </div> */}
             </div>
           </div>
         </div>
