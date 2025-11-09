@@ -39,7 +39,6 @@ export function Projects() {
       ],
       technologies: [
         "Arduino",
-        "C++",
         "Ultrasonic Sensor",
         "Bluetooth",
         "L293D",
