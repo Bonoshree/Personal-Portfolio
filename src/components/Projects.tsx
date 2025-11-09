@@ -2,8 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ShoppingBag, Car } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import girlifyImg from "@/assets/girlify.jpg";
-import carImg from "@/assets/robot.jpg";
+// import girlifyImg from "@/assets/girlify.jpg";
+// import carImg from "@/assets/robot.jpg";
 
 export function Projects() {
   const projects = [
@@ -11,7 +11,7 @@ export function Projects() {
       title: "Girlify – Style Meets Convenience",
       category: "Web Development",
       icon: ShoppingBag,
-      image: girlifyImg,
+      // image: girlifyImg,
       description:
         "An e-commerce platform designed to make online fashion shopping effortless and enjoyable.",
       features: [
@@ -28,7 +28,7 @@ export function Projects() {
       title: "Obstacle Avoiding & Voice-Controlled Car",
       category: "Embedded Systems",
       icon: Car,
-      image: carImg,
+      // image: carImg,
       description:
         "An intelligent robotic car that detects and avoids obstacles while responding to voice commands.",
       features: [
