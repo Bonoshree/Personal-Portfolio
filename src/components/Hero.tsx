@@ -60,7 +60,7 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               <a
-  href={`/view?file=/bonoshree-cv.pdf`}
+  href={`${import.meta.env.BASE_URL}bonoshree-cv.pdf`}
   target="_blank"
   rel="noopener noreferrer"
 >
@@ -72,6 +72,7 @@ export function Hero() {
     View CV
   </Button>
 </a>
+
 
 
               <Button
