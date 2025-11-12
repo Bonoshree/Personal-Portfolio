@@ -59,14 +59,20 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
-              <Button
-                onClick={handleViewCV}
-                size="lg"
-                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                View CV
-              </Button>
+              <a
+  href={`/view?file=/bonoshree-cv.pdf`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg"
+  >
+    <Download className="mr-2 h-5 w-5" />
+    View CV
+  </Button>
+</a>
+
 
               <Button
                 size="lg"
