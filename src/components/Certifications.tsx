@@ -36,7 +36,6 @@ export function Certifications() {
     },
   ];
 
-  // Function to open PDF in a new tab
   const openPDF = (path: string) => {
     window.open(path, "_blank", "noopener,noreferrer");
   };
@@ -44,7 +43,6 @@ export function Certifications() {
   return (
     <section id="certifications" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        {/* Section Heading */}
         <div className="text-center mb-16">
           <p className="text-primary font-semibold text-lg mb-2">ACHIEVEMENTS</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -53,7 +51,6 @@ export function Certifications() {
           <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
         </div>
 
-        {/* Certifications Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <Card
@@ -72,12 +69,8 @@ export function Certifications() {
                     <Badge variant="outline" className="text-xs">
                       {cert.type}
                     </Badge>
-                    <h3 className="font-bold text-lg leading-tight">
-                      {cert.title}
-                    </h3>
-                    <p className="text-primary font-medium text-sm">
-                      {cert.issuer}
-                    </p>
+                    <h3 className="font-bold text-lg leading-tight">{cert.title}</h3>
+                    <p className="text-primary font-medium text-sm">{cert.issuer}</p>
                   </div>
 
                   <div className="flex items-center justify-between text-sm">
@@ -95,7 +88,7 @@ export function Certifications() {
                       <Button
                         size="sm"
                         onClick={() => openPDF(cert.pdf)}
-                        className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg"
                       >
                         View Certificate
                       </Button>
@@ -107,15 +100,14 @@ export function Certifications() {
           ))}
         </div>
 
-        {/* Footer Card */}
         <div className="mt-16 text-center">
           <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
             <div className="max-w-2xl mx-auto space-y-4">
-              <Award className="h-12 w-12 text-primary mx-auto animate-pulse" />
+              <Award className="h-12 w-12 text-primary mx-auto" />
               <h3 className="text-2xl font-bold">Continuous Learning Journey</h3>
               <p className="text-muted-foreground">
-                I'm constantly expanding my knowledge through courses, workshops,
-                and hands-on projects. Stay tuned for more achievements!
+                I'm constantly expanding my knowledge through courses, workshops and hands-on projects.  
+                Stay tuned for more achievements!
               </p>
             </div>
           </Card>
