@@ -8,21 +8,32 @@ export function Experience() {
       organization: "IEEE Antennas & Propagation Society, CUET Chapter",
       period: "Aug 2025 – Present",
       icon: Rocket,
-      description: "Leading program initiatives and coordinating technical events focused on antenna systems and electromagnetic wave propagation.",
+      description:
+        "Leading program initiatives and coordinating technical events focused on antenna systems and electromagnetic wave propagation.",
     },
     {
-      role: "Executive Member",
+      role: "Logistics & Operation",
       organization: "IEEE CUET Student Branch",
-      period: "Oct 2024 – Present",
+      period: "May 2025 – July 2025",
       icon: Users,
-      description: "Contributing to organizational activities, technical workshops, and student engagement programs.",
+      description:
+        "Managed resources, coordination, and smooth execution of events.",
     },
+    // {
+    //   role: "Executive Member",
+    //   organization: "IEEE CUET Student Branch",
+    //   period: "Oct 2024 – Present",
+    //   icon: Users,
+    //   description:
+    //     "Contributing to organizational activities, technical workshops, and student engagement programs.",
+    // },
     {
       role: "General Member",
       organization: "Andromeda Space & Robotics Research Organization",
       period: "Oct 2024 – Present",
       icon: Briefcase,
-      description: "Participating in space technology research, robotics projects, and collaborative innovation initiatives.",
+      description:
+        "Participating in space technology research, robotics projects, and collaborative innovation initiatives.",
     },
   ];
 
@@ -48,25 +59,38 @@ export function Experience() {
               return (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row items-center gap-8 ${
-                    isEven ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className={`flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Card */}
                   <Card
-                    className={`flex-1 p-6 hover:shadow-xl transition-all duration-300 ${
-                      isEven ? "md:text-right" : "md:text-left"
-                    }`}
+                    className={`flex-1 p-6 hover:shadow-xl transition-all duration-300 ${isEven ? "md:text-right" : "md:text-left"
+                      }`}
                   >
                     <div className="space-y-3">
-                      <div className={`flex items-center gap-3 ${isEven ? "md:justify-end" : "md:justify-start"}`}>
+                      
+                      {/* TOP ROW — ICON + PERIOD */}
+                      <div
+                        className={`flex items-center gap-3 ${isEven ? "md:justify-end" : "md:justify-start"
+                          }`}
+                      >
                         <div className="p-2 bg-primary/10 rounded-lg">
                           <IconComponent className="h-6 w-6 text-primary" />
                         </div>
-                        <span className="text-sm font-semibold text-primary">{exp.period}</span>
+
+                        {/* UPDATED PERIOD COLOR */}
+                        <span className="text-sm font-semibold text-[#1A3D64] dark:text-white">
+                          {exp.period}
+                        </span>
                       </div>
+
+                      {/* ROLE */}
                       <h3 className="text-xl font-bold">{exp.role}</h3>
+
+                      {/* ORGANIZATION */}
                       <p className="text-accent font-medium">{exp.organization}</p>
+
+                      {/* DESCRIPTION */}
                       <p className="text-muted-foreground">{exp.description}</p>
                     </div>
                   </Card>

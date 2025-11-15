@@ -41,22 +41,23 @@ export function Skills() {
               >
                 {/* Icon */}
                 <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-xl bg-gradient-to-tr from-pink-100 to-pink-50 text-pink-500 shadow-inner">
+                  <div className="p-4 rounded-xl bg-[rgba(26,61,100,0.1)] dark:bg-[rgba(255,255,255,0.1)] text-[#1A3D64] dark:text-white shadow-inner">
                     <IconComponent className="h-8 w-8" />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold mb-4">{category.title}</h3>
+                <h3 className="text-lg font-bold mb-4 dark:text-white">{category.title}</h3>
 
                 {/* Skill List */}
                 <ul className="text-left space-y-2 mx-auto w-fit">
                   {category.skills.map((skill, skillIndex) => (
                     <li
                       key={skillIndex}
-                      className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition"
+                      className="flex items-center gap-2 text-[#1A3D64] dark:text-white transition"
                     >
-                      <span className="h-2 w-2 bg-pink-400 rounded-full" />
+                      {/* Colored bullet */}
+                      <span className="h-2 w-2 bg-[#1A3D64] dark:bg-white rounded-full" />
                       {skill}
                     </li>
                   ))}
@@ -68,8 +69,8 @@ export function Skills() {
 
         {/* Operating Systems */}
         <div className="text-center mt-12">
-          <p className="font-medium text-muted-foreground">
-            <span className="font-semibold text-foreground">Operating Systems:</span> Windows
+          <p className="font-medium text-muted-foreground dark:text-white">
+            <span className="font-semibold text-foreground dark:text-white">Operating Systems:</span> Windows
           </p>
         </div>
       </div>

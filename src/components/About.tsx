@@ -12,13 +12,13 @@ export function About() {
     {
       degree: "Higher Secondary Certificate (Science)",
       institution: "Sylhet Govt. Women's College",
-      period: "2019 – 2021",
+      period: "2019 – 2020",
       gpa: "GPA: 5.00/5.00",
     },
     {
       degree: "Secondary School Certificate (Science)",
       institution: "Blue Bird School and College, Sylhet",
-      period: "2017 – 2019",
+      period: "2017 – 2018",
       gpa: "GPA: 5.00/5.00",
     },
   ];
@@ -39,24 +39,30 @@ export function About() {
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary via-accent to-secondary rounded-full" />
               <div className="pl-8">
                 <h3 className="text-2xl font-bold mb-4 text-primary">My Story</h3>
+
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    I'm <span className="font-semibold text-foreground">Bonoshree Talukder Tondra</span>, 
+                    I'm <span className="font-semibold text-foreground">Bonoshree Talukder Tondra</span>,
                     an Electronics and Telecommunication Engineering student at the{" "}
-                    <span className="font-semibold text-foreground">Chittagong University of Engineering & Technology (CUET)</span>.
+                    <span className="font-semibold text-foreground">
+                      Chittagong University of Engineering & Technology (CUET)
+                    </span>.
                   </p>
+
                   <p>
-                    I'm deeply passionate about circuits, coding, and communication systems. I love combining 
-                    hardware and software to build innovative, real-world technological solutions.
+                    I'm deeply passionate about circuits, coding, and communication systems.
+                    I love combining hardware and software to build innovative, real-world technological solutions.
                   </p>
+
                   <p>
                     As a <span className="font-semibold text-primary">machine learning</span> and{" "}
-                    <span className="font-semibold text-accent">deep learning</span> enthusiast, I constantly 
-                    explore algorithms, AI applications, and IoT technologies to expand my knowledge and practical experience.
+                    <span className="font-semibold text-accent">deep learning</span> enthusiast, I explore
+                    algorithms, AI applications, and IoT technologies to expand my knowledge.
                   </p>
+
                   <p>
-                    My goal is to bridge the gap between theoretical knowledge and practical implementation, 
-                    creating solutions that make a real difference in people's lives.
+                    My goal is to bridge the gap between theoretical knowledge and practical implementation,
+                    creating solutions that make a real difference.
                   </p>
                 </div>
               </div>
@@ -81,17 +87,21 @@ export function About() {
                   <div className="space-y-2">
                     <div className="flex items-start justify-between gap-4">
                       <h4 className="font-bold text-lg leading-tight">{edu.degree}</h4>
+
                       {edu.status && (
                         <span className="px-3 py-1 bg-primary text-primary-foreground text-sm rounded-full whitespace-nowrap">
                           {edu.status}
                         </span>
                       )}
                     </div>
+
                     <p className="text-primary font-medium">{edu.institution}</p>
+
                     <div className="flex items-center justify-between text-sm text-muted-foreground">
                       <span>{edu.period}</span>
+
                       {edu.gpa && (
-                        <span className="flex items-center gap-2 font-semibold text-secondary">
+                        <span className="flex items-center gap-2 font-semibold text-[#1A3D64] dark:text-white">
                           <Award className="h-4 w-4" />
                           {edu.gpa}
                         </span>

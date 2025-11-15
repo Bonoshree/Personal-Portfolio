@@ -16,25 +16,17 @@ const contactSchema = z.object({
 
 export function Contact() {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
       contactSchema.parse(formData);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        toast({
-          title: "Validation Error",
-          description: error.errors[0].message,
-          variant: "destructive",
-        });
+        toast({ title: "Validation Error", description: error.errors[0].message, variant: "destructive" });
         return;
       }
     }
@@ -45,57 +37,24 @@ export function Contact() {
       await emailjs.send(
         "service_zbqz77b",
         "template_a453u0j",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_name: "Bonoshree",
-        },
+        { from_name: formData.name, from_email: formData.email, message: formData.message, to_name: "Bonoshree" },
         "nyrlx0R791I3_d-_9"
       );
 
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
-
+      toast({ title: "Message Sent!", description: "Thank you for reaching out. I'll get back to you soon!" });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or email directly.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Failed to send message. Please try again or email directly.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "bonoshreetondra@gmail.com",
-      href: "mailto:bonoshreetondra@gmail.com",
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "Bonoshree Talukder Tondra",
-      href: "https://linkedin.com/in/bonoshree-talukder-tondra-a372532a2",
-    },
-    {
-      icon: Github,
-      label: "GitHub",
-      value: "@Bonoshree",
-      href: "https://github.com/Bonoshree",
-    },
-    {
-      icon: Facebook,
-      label: "Facebook",
-      value: "Connect on Facebook",
-      href: "https://facebook.com/share/17WURYdBXA/",
-    },
+    { icon: Mail, label: "Email", value: "bonoshreetondra@gmail.com", href: "mailto:bonoshreetondra@gmail.com" },
+    { icon: Linkedin, label: "LinkedIn", value: "Bonoshree Talukder Tondra", href: "https://linkedin.com/in/bonoshree-talukder-tondra-a372532a2" },
+    { icon: Github, label: "GitHub", value: "@Bonoshree", href: "https://github.com/Bonoshree" },
+    { icon: Facebook, label: "Facebook", value: "Connect on Facebook", href: "https://facebook.com/share/17WURYdBXA/" },
   ];
 
   return (
@@ -127,13 +86,11 @@ export function Contact() {
                       className="flex items-start gap-4 p-4 rounded-lg hover:bg-card transition-colors group"
                     >
                       <div className="p-2 bg-primary/10 rounded-lg group-hover:scale-110 transition-transform">
-                        <IconComponent className="h-5 w-5 text-primary" />
+                        <IconComponent className="h-5 w-5 text-primary dark:text-white" />
                       </div>
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground">{info.label}</p>
-                        <p className="font-medium group-hover:text-primary transition-colors">
-                          {info.value}
-                        </p>
+                        <p className="font-medium group-hover:text-primary transition-colors">{info.value}</p>
                       </div>
                     </a>
                   );
@@ -144,15 +101,9 @@ export function Contact() {
             <Card className="p-6">
               <h3 className="text-xl font-bold mb-4">Quick Links</h3>
               <div className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="#about">About Me</a>
-                </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="#projects">View Projects</a>
-                </Button>
-                <Button variant="outline" className="w-full justify-start">
-                  Download CV
-                </Button>
+                <Button variant="outline" className="w-full justify-start" asChild><a href="#about">About Me</a></Button>
+                <Button variant="outline" className="w-full justify-start" asChild><a href="#projects">View Projects</a></Button>
+                <Button variant="outline" className="w-full justify-start">Download CV</Button>
               </div>
             </Card>
           </div>
@@ -163,64 +114,45 @@ export function Contact() {
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    placeholder="Your Full Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
+                  <label htmlFor="name" className="text-sm font-medium">Your Name</label>
+                  <Input id="name" placeholder="Your Full Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Your Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
+                  <label htmlFor="email" className="text-sm font-medium">Your Email</label>
+                  <Input id="email" type="email" placeholder="your.email@example.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Your Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell me about your project or just say hi..."
-                    rows={6}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  />
+                  <label htmlFor="message" className="text-sm font-medium">Your Message</label>
+                  <Textarea id="message" placeholder="Tell me about your project or just say hi..." rows={6} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
                 </div>
-<Button
-  type="submit"
-  size="lg"
-  className={`w-full bg-pink-400 hover:bg-pink-500 text-white shadow-lg transition-colors ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
-  disabled={isSubmitting}
->
-  <Send className="mr-2 h-5 w-5" />
-  {isSubmitting ? "Sending..." : "Send Message"}
-</Button>
 
+                {/* Send Button */}
+                <Button
+                  type="submit"
+                  size="lg"
+                  className={`w-full bg-[#1A3D64] hover:bg-[#162f51] text-white shadow-lg transition-colors ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+                  disabled={isSubmitting}
+                >
+                  <Send className="mr-2 h-5 w-5 text-white" />
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
               </form>
 
-              {/* Direct Email Line Below Form */}
-              <div className="mt-4 text-center bg-blue-50 p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground mb-1">Prefer email? Reach me directly at</p>
-                <a
-                  href="mailto:bonoshreetondra@gmail.com"
-                  className="text-blue-600 font-medium hover:underline"
-                >
-                  bonoshreetondra@gmail.com
-                </a>
-              </div>
+              {/* Direct Email Section */}
+              <div className="mt-4 text-center p-4 rounded-lg bg-[#1A3D64]/10 dark:bg-[#1A3D64]/20">
+  <p className="text-[#1A3D64] dark:text-white text-sm mb-1">
+    Prefer email? Reach me directly at
+  </p>
+  <a
+    href="mailto:bonoshreetondra@gmail.com"
+    className="text-[#1A3D64] dark:text-[#AAC4F5] font-medium hover:underline"
+  >
+    bonoshreetondra@gmail.com
+  </a>
+</div>
+
             </Card>
           </div>
         </div>

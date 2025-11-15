@@ -35,9 +35,9 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
           <div className="space-y-6">
             <div className="inline-block px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
-              <p className="text-sm md:text-base font-medium text-secondary">
+              {/* <p className="text-sm md:text-base font-medium text-secondary">
                 Welcome to my portfolio
-              </p>
+              </p> */}
             </div>
 
             <div className="space-y-3">
@@ -78,20 +78,29 @@ export function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-card border hover:bg-muted transition-all flex items-center gap-2 text-sm font-medium"
-                >
-                  <social.icon className="h-4 w-4 text-secondary" />
-                  <span className="text-foreground">{social.label}</span>
-                </a>
-              ))}
-            </div>
+            {/* Social Links */}
+<div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-4">
+  {socialLinks.map((social) => (
+    <a
+      key={social.label}
+      href={social.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 rounded-lg bg-card border hover:bg-muted transition-all flex items-center gap-2 text-sm font-medium
+                 text-foreground dark:text-white"
+    >
+      <social.icon 
+        className="h-4 w-4 
+                   text-foreground dark:text-white 
+                   transition-colors" 
+      />
+      <span className="text-foreground dark:text-white">
+        {social.label}
+      </span>
+    </a>
+  ))}
+</div>
+
           </div>
 
           {/* Profile Image */}

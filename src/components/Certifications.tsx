@@ -70,7 +70,7 @@ export function Certifications() {
                       {cert.type}
                     </Badge>
                     <h3 className="font-bold text-lg leading-tight">{cert.title}</h3>
-                    <p className="text-primary font-medium text-sm">{cert.issuer}</p>
+                    <p className="text-[#AAC4F5] font-medium text-sm">{cert.issuer}</p>
                   </div>
 
                   <div className="flex items-center justify-between text-sm">
